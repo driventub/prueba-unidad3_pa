@@ -1,5 +1,7 @@
 package ec.edu.uce.service;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -10,6 +12,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import ec.edu.uce.modelo.ConsultarStock;
 import ec.edu.uce.modelo.Producto;
 import ec.edu.uce.modelo.Producto;
 import ec.edu.uce.repository.IProductoRepo;
@@ -42,5 +45,17 @@ public class ProductoServiceImpl implements IProductoService{
 	public void borrarProductoPorId(Integer id) {
 		this.guardiaRepo.borrarProductoPorId(id);
 		
+	}
+
+	@Override
+	public Producto buscarCodigoBarras(String codigoBarras) {
+		// TODO Auto-generated method stub
+		return this.guardiaRepo.buscarCodigoBarras(codigoBarras);
+	}
+
+	@Override
+	public List<ConsultarStock> buscarStock(String codigoBarras) {
+		
+		return this.guardiaRepo.buscarStock(codigoBarras);
 	}
 }	

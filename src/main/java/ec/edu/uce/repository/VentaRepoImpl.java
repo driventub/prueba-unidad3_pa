@@ -1,5 +1,7 @@
 package ec.edu.uce.repository;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -8,6 +10,7 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import ec.edu.uce.modelo.ReporteVenta;
 import ec.edu.uce.modelo.Venta;
 
 @Repository
@@ -42,6 +45,12 @@ public class VentaRepoImpl implements IVentaRepo {
 		Venta gBorrar = this.buscarVenta(id);
 		this.entityManager.remove(gBorrar);
 
+	}
+
+	@Override
+	public List<ReporteVenta> buscarReporteVenta(String codigoBarras, String nombre, Integer stock) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

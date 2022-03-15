@@ -2,11 +2,12 @@ package ec.edu.uce.repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
+import javax.transaction.Transactional.TxType;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import ec.edu.uce.modelo.DetalleVenta;
 
@@ -32,6 +33,7 @@ public class DetalleVentaRepoImpl implements IDetalleVentaRepo {
 	}
 
 	@Override
+	@Transactional(value = TxType.MANDATORY)
 	public void actualizarDetalleVentaPorId(DetalleVenta p) {
 		this.entityManager.merge(p);
 

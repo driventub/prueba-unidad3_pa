@@ -29,7 +29,7 @@ public class Producto {
 	private String nombre;
 	
 	@Column(name = "prod_categoria")
-	private String Categoria;
+	private String categoria;
 	
 	@Column(name = "prod_stock")
 	private Integer stock;
@@ -66,11 +66,11 @@ public class Producto {
 	}
 
 	public String getCategoria() {
-		return Categoria;
+		return categoria;
 	}
 
 	public void setCategoria(String categoria) {
-		Categoria = categoria;
+		this.categoria = categoria;
 	}
 
 	public Integer getStock() {
@@ -102,7 +102,7 @@ public class Producto {
 	@Override
 	public String toString() {
 		return "Producto [id=" + id + ", codigoBarras=" + codigoBarras + ", nombre=" + nombre + ", Categoria="
-				+ Categoria + ", stock=" + stock + ", precio=" + precio + "]";
+				+ categoria + ", stock=" + stock + ", precio=" + precio + "]";
 	}
 	
 	

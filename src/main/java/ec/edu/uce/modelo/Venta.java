@@ -37,7 +37,7 @@ public class Venta {
 	private BigDecimal totalVenta;
 	
 	@OneToOne(mappedBy = "venta",cascade = CascadeType.ALL)
-	private List<Producto> producto;
+	private DetalleVenta detalleVenta;
 
 //	Set y Get
 	
@@ -81,18 +81,23 @@ public class Venta {
 		this.totalVenta = totalVenta;
 	}
 
-	public List<Producto> getProducto() {
-		return producto;
+	
+
+	
+
+
+	public DetalleVenta getDetalleVenta() {
+		return detalleVenta;
 	}
 
-	public void setProducto(List<Producto> producto) {
-		this.producto = producto;
+	public void setDetalleVenta(DetalleVenta detalleVenta) {
+		this.detalleVenta = detalleVenta;
 	}
 
 	@Override
 	public String toString() {
 		return "Venta [id=" + id + ", numero=" + numero + ", fecha=" + fecha + ", cedulaCliente=" + cedulaCliente
-				+ ", totalVenta=" + totalVenta + ", producto=" + producto + "]";
+				+ ", totalVenta=" + totalVenta  + "]";
 	}
 	
 	
